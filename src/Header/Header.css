@@ -40,11 +40,12 @@
   padding: 10px;
   height: 12px;
   border: none;
-  width: 70%;
+  width: 90%;
 }
 .header_nav {
   display: flex;
   justify-content: space-evenly;
+  margin-right: 5%;
 }
 .header_option {
   display: flex;

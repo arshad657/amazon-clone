@@ -1,16 +1,30 @@
 import React from "react";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 import "./Home.css";
-import Product from "./Product";
+import Product from "../Product/Product";
+import { useStateValue } from "../StateProvider";
+
 
 function Home() {
+  const [{basket}] = useStateValue();
+  console.log()
   return (
+
+    <>
+    <Header />
     <div className="home">
+      
       <div className="home_container">
         <img
           className="home_image"
           src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg?fbclid=IwAR2fTceZ6u60ys4weS2uYCNS72yDoB0LekJDejgslGkk3CH8xiYyIWj_fmA"
           alt=""
         />
+    {{basket}.basket.length != 0 && 
+    <p className="alert">☑ {{basket}.basket.length} Product added successfully</p>
+    }
+
         <div className="home_row">
         <Product 
         id="12321341"
@@ -22,7 +36,7 @@ function Home() {
                   id="4903850"
                   title="Kenwood kMix stand Mixer for Baking, stylish Kitchen Mixer with K-beater, dough Hook and whisk,5 Litre Glass Bowl"
                            price={239}
-                           image= "https://cdn.shopify.com/s/files/1/0087/7261/6269/products/kenbwood-mixer-kmx754rd_1000x1000.jpg?v=1573028674"
+                           image= "https://m.media-amazon.com/images/I/61etD4-IrPL._AC_SL1200_.jpg"
                            rating={3} />
         </div>
         <div className="home_row">
@@ -45,9 +59,12 @@ function Home() {
                                                     image= "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-og-202003?wid=600&hei=315&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1583201083141"
                                                     rating={2} />
         </div>
-        <div className="home_row"></div>
+        
       </div>
+      
     </div>
+    <Footer />
+    </>
   );
 }
 

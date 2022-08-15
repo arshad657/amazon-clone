@@ -17,4 +17,13 @@
     margin-left: 5px;
     margin-right: 5px;
 }
+.alert{
+  padding-top: 7px;
+  font-size: 18px;
+  height: 35px;
+  text-align: center;
+  background-color: #bbf7d0;
+  color: green;
+  border-radius: 20px;
+}
 

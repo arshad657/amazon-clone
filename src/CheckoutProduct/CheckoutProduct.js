@@ -1,6 +1,6 @@
 import React from 'react';
 import "./CheckoutProduct.css";
-import { useStateValue } from './StateProvider';
+import { useStateValue } from '../StateProvider';
 
 
 function CheckoutProduct( {id, image, title, price, rating}) {
@@ -17,24 +17,18 @@ const [{basktet}, dispatch] = useStateValue();
     return (
         <div className="checkoutProduct">
             <img className="checkoutProduct_image" src={image} />
-
             <div className="checkoutProduct_info">
                 <p className="checkoutProduct_title">{title}</p>
                 <p className="checkoutProduct_price">
                 <small>$</small>
                 <strong>{price}</strong> </p>
-              
-              
               <div className="checkoutProduct_rating">
               {Array(rating)
               .fill()
               .map((_, i) => (
                   <img src="https://static.xx.fbcdn.net/images/emoji.php/v9/t9a/1/32/1f31f.png" alt="" />
               ))
-              
               }
-              
-              
               </div>
                 <button onClick={removeFromBasket}>Remove from basket</button>
             </div>
