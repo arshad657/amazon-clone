@@ -1,5 +1,3 @@
-This project was bootstrapped with 
-
 ## Amazon-Clone-arshad
 
 
